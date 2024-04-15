@@ -1,0 +1,11 @@
+class URLS:
+    MAIN_PAGE = "https://www.lamoda.by/"
+    TRACKING_PAGE = "https://www.lamoda.by/track/"
+    WOMEN_TOP = "https://www.lamoda.by/women-home/?sitelink=topmenuW"
+    VK_FOOTER = "https://vk.com/lamodaby?from=footer"
+    TWITTER_FOOTER = "https://twitter.com/Lamoda_by?from=footer"
+    OK_FOOTER = "https://ok.ru/group/52479738445918?from=footer"
+    KZ_SITE = "https://www.lamoda.kz/"
+    RU_SITE = "https://www.lamoda.ru/"
+    CONSENT_PDF = "https://a.lmcdn.ru/files/cms/consent-to-mailing.pdf"
+    ORDER_HISTORY_FROM_TRACK = "https://www.lamoda.by/sales/order/history/?from=track"
