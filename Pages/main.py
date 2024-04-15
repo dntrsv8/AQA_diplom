@@ -1,6 +1,6 @@
 import allure
 from selenium.webdriver.common.by import By
-from Pages.basepage import BasePage
+from pages.basepage import BasePage
 from locators.main_locators import MainLocators
 from data.urls import URLS
 

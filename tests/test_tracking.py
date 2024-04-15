@@ -1,6 +1,6 @@
 import pytest
 import allure
-from Pages.tracking_order import Tracking
+from pages.tracking_order import Tracking
 from data.urls import URLS
 
 

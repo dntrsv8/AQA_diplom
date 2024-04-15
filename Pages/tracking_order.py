@@ -1,6 +1,6 @@
 import allure
 from data.urls import URLS
-from Pages.basepage import BasePage
+from pages.basepage import BasePage
 from locators.tracking_locators import TrackingLocators
 from selenium.webdriver.common.by import By
 

@@ -2,7 +2,7 @@ import pyautogui
 import pytest
 import allure
 from selenium.webdriver.common.by import By
-from Pages.main import MainPage
+from pages.main import MainPage
 from data.urls import URLS
 
 
