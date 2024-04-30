@@ -25,16 +25,6 @@
     pytest
     ```
 
-- **Для запуска всех тестов с Allure выполните:**
-
-    ```bash
-    python -m pytest --alluredir=allure_result  
-    ```
-- **Для запуска всех тестов в headless режиме с Allure выполните:**
-
-    ```bash
-    pytest --headless --alluredir allure-results
-    ```
 - **Для генерации Allure репорта:**
 
     ```bash

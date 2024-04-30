@@ -1,13 +1,13 @@
 import pytest
 import allure
-from pages.tracking_order import Tracking
+from pages.tracking_page import TrackingPage
 from data.urls import URLS
 
 
 @allure.title("TC014:Page title is correct for the tracking order page")
 @allure.description("Checking title of the tracking order page")
 def test_tracking_order_title(driver_chrome):
-    tracking_page = Tracking(driver_chrome)
+    tracking_page = TrackingPage(driver_chrome)
     tracking_page.open_tracking()
     assert "Проверить заказ по номеру" in tracking_page.title()
 
@@ -15,7 +15,7 @@ def test_tracking_order_title(driver_chrome):
 @allure.title("TC015:Correct page is opened for orders history")
 @allure.description("Checking that url is correct for the order history opened from the tracking order")
 def test_my_order_link(driver_chrome):
-    tracking_page = Tracking(driver_chrome)
+    tracking_page = TrackingPage(driver_chrome)
     tracking_page.open_tracking()
     tracking_page.wait_for_element(tracking_page.MY_ORDERS_XPATH)
     tracking_page.my_orders_click()
@@ -26,7 +26,7 @@ def test_my_order_link(driver_chrome):
 @allure.title("TC016:Tracking order button is enabled")
 @allure.description("Checking that if all required data is entered as needed tracking order button is enabled")
 def test_tracking_button_enabled(driver_chrome):
-    tracking_page = Tracking(driver_chrome)
+    tracking_page = TrackingPage(driver_chrome)
     tracking_page.open_tracking()
     tracking_page.wait_for_element(tracking_page.ORDER_NUMBER_XPATH)
     input_order = tracking_page.order_number_field()
@@ -40,7 +40,7 @@ def test_tracking_button_enabled(driver_chrome):
 @allure.title("TC017:Tracking order button is disabled when phone is missing")
 @allure.description("Checking that if phone number field is empty, tracking order button is disabled")
 def test_tracking_button_order_disabled(driver_chrome):
-    tracking_page = Tracking(driver_chrome)
+    tracking_page = TrackingPage(driver_chrome)
     tracking_page.open_tracking()
     tracking_page.wait_for_element(tracking_page.ORDER_NUMBER_XPATH)
     input_order = tracking_page.order_number_field()
@@ -52,7 +52,7 @@ def test_tracking_button_order_disabled(driver_chrome):
 @allure.title("TC018:Tracking order button is disabled when order is missing")
 @allure.description("Checking that if order number field is empty, tracking order button is disabled")
 def test_tracking_button_phone_disabled(driver_chrome):
-    tracking_page = Tracking(driver_chrome)
+    tracking_page = TrackingPage(driver_chrome)
     tracking_page.open_tracking()
     tracking_page.wait_for_element(tracking_page.ORDER_NUMBER_XPATH)
     input_phone = tracking_page.phone_number_field()
@@ -65,7 +65,7 @@ def test_tracking_button_phone_disabled(driver_chrome):
 @allure.description("Checking that correct validation appears for invalid order number for the tracking page")
 @pytest.mark.parametrize("order_number", ["BY123456-2", "12ABCJAJA"])
 def test_track_order_number(driver_chrome, order_number):
-    tracking_page = Tracking(driver_chrome)
+    tracking_page = TrackingPage(driver_chrome)
     tracking_page.open_tracking()
     tracking_page.wait_for_element(tracking_page.ORDER_NUMBER_XPATH)
     input_element = tracking_page.order_number_field()
@@ -81,7 +81,7 @@ def test_track_order_number(driver_chrome, order_number):
 @allure.description("Checking that correct validation appears if invalid phone number was entered on the tracking page")
 @pytest.mark.parametrize("phone_number", ["12312312", "ABCJAJA"])
 def test_track_phone_number(driver_chrome, phone_number):
-    tracking_page = Tracking(driver_chrome)
+    tracking_page = TrackingPage(driver_chrome)
     tracking_page.open_tracking()
     tracking_page.wait_for_element(tracking_page.PHONE_NUMBER_XPATH)
     input_element = tracking_page.phone_number_field()

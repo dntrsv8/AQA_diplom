@@ -2,7 +2,7 @@ import pyautogui
 import pytest
 import allure
 from selenium.webdriver.common.by import By
-from pages.main import MainPage
+from pages.main_page import MainPage
 from data.urls import URLS
 
 
@@ -35,7 +35,7 @@ def test_search_by_item_number(driver_chrome):
     main_page.open_main()
     main_page.wait_for_element(main_page.SEARCH_BAR_XPATH)
     input_element = main_page.search_bar()
-    item_number = "rtlack740303"
+    item_number = "rtlada873002"
     input_element.send_keys(item_number)
     search_button = main_page.search_button()
     main_page.forced_click(search_button)
